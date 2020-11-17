@@ -88,3 +88,7 @@ module.exports = (context, eventGridEvent, inputBlob) => {
 };
 ```
 2. In portal click Functions->Thumbnail->Integration.
+3. Create new EventGrid Subsription with topic name: imagestoragesystopic
+4. Switch to the Filters tab, and do the following actions:
+* Select Enable subject filtering option.
+* For Subject begins with, enter the following value : /blobServices/default/containers/images/blobs/.
