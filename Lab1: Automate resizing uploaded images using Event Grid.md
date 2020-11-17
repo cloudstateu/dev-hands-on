@@ -20,7 +20,7 @@ In this scenario we will add serverless automatic thumbnail generation using Azu
 ## Task 3: Insert application code:
 
 1. Open function code.
-5. Enter code to index.js file:
+2. Enter code to index.js file:
 
 ```
 const stream = require('stream');
@@ -87,8 +87,9 @@ module.exports = (context, eventGridEvent, inputBlob) => {
   }
 };
 ```
-2. In portal click Functions->Thumbnail->Integration.
-3. Create new EventGrid Subsription with topic name: imagestoragesystopic
-4. Switch to the Filters tab, and do the following actions:
+3. In portal click Functions->Thumbnail->Integration.
+4. Create new EventGrid Subsription with topic name: imagestoragesystopic
+5. Switch to the Filters tab, and do the following actions:
 * Select Enable subject filtering option.
 * For Subject begins with, enter the following value : /blobServices/default/containers/images/blobs/.
+6. Select Create to add the event subscription. This creates an event subscription that triggers the Thumbnail function when a blob is added to the images container. The function resizes the images and adds them to the thumbnails container.
