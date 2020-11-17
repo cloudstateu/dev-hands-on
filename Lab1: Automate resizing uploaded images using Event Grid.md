@@ -12,12 +12,15 @@ In this scenario we will add serverless automatic thumbnail generation using Azu
 
 ## Task 2: Create Azure Blob Storage and Azure Function
 1. Create an Azure Blob Storage from Azure Portal in West Europe region.
-2. Create Azure Function
+2. Create Azure Function.
+* Set runtime to NodeJS 12LTS
+3. Create new Function called Thumbnail, triggered by EventGrid.
 
 
 ## Task 3: Insert application code:
 
-1. Enter code to index.js file:
+1. Open function code.
+5. Enter code to index.js file:
 
 ```
 const stream = require('stream');
@@ -84,4 +87,4 @@ module.exports = (context, eventGridEvent, inputBlob) => {
   }
 };
 ```
-2. Add EventGrid Trigger.
+2. In portal click Functions->Thumbnail->Integration.
